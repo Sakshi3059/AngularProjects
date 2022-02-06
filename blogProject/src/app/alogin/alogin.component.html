@@ -1,0 +1,30 @@
+<div class="container row text-center">
+   
+
+<div class="col-sm-4 " id="form">
+   <form [formGroup]="log" (ngSubmit)="login()" class="form-group">
+  
+      <input type="hidden" formControlName="$key" class="form-control">
+      
+   <input class="form-control" type="text" placeholder="User name" formControlName="uname">
+   <div *ngIf="log.controls['uname'].invalid && log.controls['uname'].touched">
+      <div *ngIf="log.controls['uname'].errors.required">uname is required</div>
+   </div>
+ 
+   <input class="form-control" type="password" placeholder="Password" formControlName="pwd">
+   <div *ngIf="log.controls['pwd'].invalid && log.controls['pwd'].touched">
+      <div *ngIf="log.controls['pwd'].errors.required">pwd is required</div>
+   </div>
+   <input type=submit class="btn btn-primary" value="Login" (click)="login()" [disabled]="log.invalid">
+    <div>
+       Not a Member?
+       <a  (click)="signUp()">Sign-Up</a>
+    </div>
+
+
+<!-- <app-uheader [User]="uname" ></app-uheader> -->
+ 
+ </form>
+ </div>
+</div>
+

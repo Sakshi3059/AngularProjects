@@ -1,0 +1,25 @@
+<table class="table table-lg">
+  <thead>
+    <th>Blog</th>
+    <th>Author</th>
+    <th>Description</th>
+    <th>Date</th>
+  </thead>
+  <ng-container *ngFor="let data of blogsArr " >
+      <tr class="table-dark" >
+         <td>{{data.Cstegory}}</td>
+        <td>{{data.Author}}</td>
+          <td>{{data.Description}}</td>
+          <td>{{data.Date}}</td> 
+        
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-outline-info" (click)="customerService.populateForm(data)">Edit</button>
+          &nbsp;&nbsp;&nbsp;<button class="btn btn-outline-danger" (click)="onDelete(data.$key)">Delete</button>
+        </td>
+    </tr>
+  </ng-container>
+</table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+  Deleted successfully.
+</div>
+

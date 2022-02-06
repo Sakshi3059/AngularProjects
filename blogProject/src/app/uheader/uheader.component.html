@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="./bhome">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav ">
+      <li class="active"><a routerLink="./bhome">Home</a></li>
+      <li><a routerLink="./bcategory">Category</a></li>
+      <li><a routerLink="./babout" >About</a></li> 
+    </ul>
+
+    <div class="nav navbar-nav">
+      <ul>
+        <li >{{act_user}}</li> 
+       </ul>
+    </div>
+
+ <ul class="nav navbar-nav navbar-right">
+  <li><a routerLink="./bsettings">Settings</a></li> 
+
+  <li><a (click)="logOut()" routerLink="/" >Log Out</a></li> 
+ </ul>
+  </div>
+</nav>

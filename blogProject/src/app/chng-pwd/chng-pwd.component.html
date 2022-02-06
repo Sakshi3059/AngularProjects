@@ -1,0 +1,10 @@
+<div class="container col-sm-8">
+    <form [formGroup]="uPwd" class="form-group" (ngSubmit)="updatePwd()">
+        <input type="hidden" formControlName="$key">
+        <input type="text" formControlName="uname" class="form-control"><br>
+        <input type="text" formControlName="oldPwd" class="form-control" placeholder="Old Password"><br>
+        <input type="text" formControlName="newPwd" class="form-control" placeholder="New Password"> <br>
+       <input type="submit" value="updatePwd" class="btn btn-primary">
+      </form>
+    
+</div>

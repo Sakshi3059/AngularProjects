@@ -1,0 +1,23 @@
+          <div class="btn-group">
+              <button type="button" (click)="dispBlog('fashion')"  class="btn btn-default" >Fashion</button>
+              <button type="button" (click)="dispBlog('technology')"  class="btn btn-default">Technology </button>
+              <button type="button" (click)="dispBlog('lifestyle')"  class="btn btn-default">Lifestyle</button>
+        </div>
+    
+    <ng-template *ngIf="all()">
+      <div *ngFor="let blogs of blogsArr" >
+        <h2>{{blogs.Category}}</h2>
+        <p>{{blogs.Description}}</p>
+        <p>{{blogs.Author}}</p>
+      </div>
+    </ng-template>
+   
+        
+
+          <ng-template *ngIf="all()">
+            <div *ngFor="let blogs of selectedCat">
+              <h2>{{blogs.Category}}</h2>
+              <p>{{blogs.Description}}</p>
+              <p>{{blogs.Author}}</p>
+            </div>
+          </ng-template>

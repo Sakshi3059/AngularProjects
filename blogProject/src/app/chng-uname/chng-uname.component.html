@@ -1,0 +1,10 @@
+<div class="col-sm-5">
+    <form [formGroup]="updUser" class="form-group" (ngSubmit)="updateUname()">
+        <input type="hidden" formControlName="$key" >
+        <input type="text" formControlName="uname" class="form-control">
+        <br>
+        <input type="text" formControlName="newUname" class="form-control">
+         <br>
+       <input type="submit" value="update uname" class="btn btn-primary">
+      </form>
+</div>
