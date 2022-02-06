@@ -1,0 +1,9 @@
+<div class="container" >
+  <h2>Categories</h2>
+  <ul class="list-group" *ngFor=" let cat of catArr" >
+    <li class="list-group-item">{{cat.Name}}</li>
+  </ul>
+</div>
+<br>
+<input type="text" placeholder="new category " [(ngModel)]="newCat">
+<input type="submit" value="Add Category" class="btn btn-primary" (ngSubmit)="addCat()">

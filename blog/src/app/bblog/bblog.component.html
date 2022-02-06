@@ -1,0 +1,58 @@
+
+
+<div class="container col-md-5">
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" formControlName="$key">
+    <div class="from-group">
+      <label >Category</label>
+      <input class="form-control" type="text" formControlName="cat" >
+      <div *ngIf="blogForm.controls['cat'].invalid && blogForm.controls['cat'].touched">
+        name is required
+      </div>
+    </div>
+
+    <div class="from-group">
+       <label > Authors</label>
+       <input class="form-control" type="text" formControlName="Author" >
+       <div *ngIf="blogForm.controls['Author'].invalid && blogForm.controls['Author'].touched"> 
+           <div *ngIf="blogForm.controls['Author'].errors.pattern">invalid input</div>
+           <div *ngIf="blogForm.controls['Author'].errors.required">input is required</div>
+    </div>
+
+     </div>
+
+     <div class="form-group">
+       <label>Description</label>
+       <input type="text" class="form-control" formControlName="des">
+       <div *ngIf="blogForm.controls['des'].invalid && blogForm.controls['des'].touched"> 
+           <div *ngIf="blogForm.controls['des'].errors.pattern">invalid input</div>
+           <div *ngIf="blogForm.controls['des'].errors.required">Description is required</div>
+        </div>
+     
+
+     </div>  
+       <div class="from-group">
+           <label > Date</label>
+           <input class="form-control" type="date" formControlName="date">
+           <div *ngIf="blogForm.controls['date'].invalid && blogForm.controls['date'].touched">
+               <div *ngIf="blogForm.controls['date'].errors.pattern">invalid input</div>
+               <div *ngIf="blogForm.controls['date'].errors.required">Date is required</div>
+            </div>
+           </div>
+
+           <br>
+
+     <div class="form-group">
+       <input type="submit" value="Save"  id="btn" class="btn btn-primary " [disabled]="blogForm.invalid">
+         <div class="alert alert-info" *ngIf="showSuccessMessage">
+            Submitted successfully!!!
+         </div>
+     </div>    
+   
+
+  </form>
+</div>
+<!-- <div class=" container col-md-5 ">
+ <app-blog-list></app-blog-list>
+
+</div> -->

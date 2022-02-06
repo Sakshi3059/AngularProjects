@@ -1,0 +1,27 @@
+<div class="container row text-center">
+   
+
+      <div class="col-sm-4 " id="form">
+         <form [formGroup]="log" (ngSubmit)="login()" class="form-group">
+        
+            
+         <input class="form-control" type="text" placeholder="User name" formControlName="uname">
+         <div *ngIf="log.controls['uname'].invalid && log.controls['uname'].touched">
+            <div class="alert alert-danger" *ngIf="log.controls['uname'].errors.required">uname is required</div>
+         </div>
+       
+         <input class="form-control" type="password" placeholder="Password" formControlName="pwd">
+         <div *ngIf="log.controls['pwd'].invalid && log.controls['pwd'].touched">
+            <div class="alert alert-danger" *ngIf="log.controls['pwd'].errors.required">pwd is required</div>
+         </div>
+         <input type=submit class="btn btn-primary" value="Login" [disabled]="log.invalid">
+          <div>
+             Not a Member?
+             <a ng-show="log.valid" (click)="signUp()">Sign-Up</a>
+          </div>
+       
+       </form>
+       </div>
+      </div>
+      
+      
